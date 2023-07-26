@@ -28,7 +28,7 @@ class Trainer:
             self._crit = crit.cuda()
             
     def save_checkpoint(self, epoch):
-        t.save({'state_dict': self._model.state_dict()}, 'checkpoint_{:03d}.onnx'.format(epoch))
+        t.save({'state_dict': self._model.state_dict()}, 'checkpoint_{:03d}.ckp'.format(epoch))
     
     def restore_checkpoint(self, epoch_n):
         ckp = t.load('checkpoints/checkpoint_{:03d}.ckp'.format(epoch_n), 'cuda' if self._cuda else None)

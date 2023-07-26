@@ -15,8 +15,8 @@ data = pd.read_csv("data.csv", sep=";")
 train_dataset = ChallengeDataset(data, mode="train")
 val_dataset = ChallengeDataset(data, mode="val")
 
-train_loader = t.utils.data.DataLoader(train_dataset, batch_size=40, shuffle=True)
-val_loader = t.utils.data.DataLoader(val_dataset, batch_size=40)
+train_loader = t.utils.data.DataLoader(train_dataset, batch_size=32, shuffle=True)
+val_loader = t.utils.data.DataLoader(val_dataset, batch_size=32)
 
 # Create an instance of our ResNet model
 model = model.ResNet()
